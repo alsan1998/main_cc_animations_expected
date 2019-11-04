@@ -1,0 +1,43 @@
+
+<html>
+<style>
+html {
+  scroll-behavior: smooth;
+  height: 6000px;
+  scroll-snap-type: y mandatory;
+  background-image: linear-gradient(#93a5cf, #e4efe9);}
+      
+#area1 {
+	background-color: blue;
+  position: absolute;
+  top: 2000px;
+  left:0px;
+  width: 100px;
+  height: 100px;
+	scroll-snap-align: start;
+}   
+#area2 {
+	background-color: green;
+  position: absolute;
+  top: 5000px;
+  left:0px;
+  width: 100px;
+  height: 100px;
+	scroll-snap-align: start;
+}
+</style>
+<script>
+var did_scroll = false;
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('scroll', () => {
+      if (document.scrollingElement.scrollTop > 1950 && !did_scroll) {
+	      document.scrollingElement.scrollTo(0, 5000);
+	      did_scroll = true;
+      }
+  });
+  window.addEventListener("wheel", event => console.info(event.deltaY));
+});
+</script>
+	<div id="area1"><h2>1</h2></div>
+  	<div id="area2"><h2>2</h2></div>
+</html>
