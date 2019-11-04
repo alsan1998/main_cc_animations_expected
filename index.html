@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	      did_scroll = true;
       }
   });
-  window.addEventListener("wheel", event => console.info(event.deltaY));
+  window.addEventListener("wheel", event => event.preventDefault());
 });
 </script>
 	<div id="area1"><h2>1</h2></div>
